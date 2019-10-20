@@ -56,3 +56,31 @@ class CeleryConfig(object):
 
 
 CELERY_CONFIG = CeleryConfig
+#from flask_appbuilder.security.manager import AUTH_OAUTH
+#AUTH_TYPE = AUTH_OAUTH
+#OAUTH_PROVIDERS = [
+#    {   'name':'graphpath',
+#        'token_key':'access_token', # Name of the token in the response of access_token_url
+#        'icon':'fa-address-card',   # Icon for the provider
+#        'remote_app': {
+#            'consumer_key':'auth-superset',  # Client Id (Identify Superset application)
+#            'consumer_secret':'auth-superset', # Secret for this Client Id (Identify Superset application)
+#            'access_token_method':'POST',    # HTTP Method to call access_token_url
+#            'access_token_params':{        # Additional parameters for calls to access_token_url
+#                'client_id':'auth-superset'
+#            },
+#            'base_url':'https://dev.graphpath.ai',
+#            'access_token_url':'https://api-sandbox.graphpath.ai/auth/v1/oauth/token',
+#            'authorize_url':'https://dev.graphpath.ai'
+#        }
+#    }
+#]
+
+# Will allow user self registration, allowing to create Flask users from Authorized User
+#AUTH_USER_REGISTRATION = False
+
+# The default user self registration role
+#AUTH_USER_REGISTRATION_ROLE = "Public"
+
+from custom_sso_security_manager import CustomSecurityManager
+CUSTOM_SECURITY_MANAGER = CustomSecurityManager
